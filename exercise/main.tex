@@ -1,0 +1,82 @@
+\documentclass[12pt]{scrreprt}
+
+% Sprache
+% Diese Packages sorgen dafür, dass man ganz einfach Deutsch schreiben kann.
+\usepackage[ngerman]{babel}
+
+% Schrift: Latin Modern
+\usepackage{lmodern}
+
+% Mathe
+% Diese Packages sorgen dafür, dass man alle möglichen Matheformeln parat hat.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Umgebungen
+% Beim ersten \newtheorem: {Aufrufbefehl}{Name}[Nummerierung]
+\newtheorem{satz}{Satz}[section]
+% Beim zweiten \newtheorem: {Aufrufbefehl}[Nummerierung]{Name}
+\newtheorem{lemma}[satz]{Lemma}
+\newtheorem{korollar}[satz]{Korollar}
+\newtheorem{beispiel}[satz]{Beispiel}
+\newtheorem{bemerkung}[satz]{Bemerkung}
+\newtheorem{definition}[satz]{Definition}
+
+% Verkürzte Befehle
+% Man will nicht immer lange Befehle schreiben, daher definiert man sich hier kurze Befehle.
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\begin{document}
+
+\chapter{Mein erster Code!}
+
+\section{Hinführung}
+In diesem Kapitel wollen wir den \textbf{Mittelwertsatz} beweisen.  Dazu benötigen wir zuerst diesen
+
+\begin{lemma}
+    Ist die Funktion $f$ differenzierbar, so ist sie auch stetig.
+\end{lemma}
+
+Wir formulieren nun den
+
+\begin{satz}[Satz von Rolle]
+    Sei $f \colon [a,b] \to \R$ stetig und auf $(a,b)$ differenzierbar, es sei zusätzlich $f(a) =
+    f(b)$.  Dann existiert ein $\xi \in (a,b)$ mit $f'(\xi) = 0$.
+\end{satz}
+
+Wir verwenden diesen Satz ohne Beweis.
+
+\section{Eine Perle der Analysis}
+
+\begin{satz}[Mittelwertsatz]
+    Sei $f \colon [a,b] \to \R$ stetig und auf $(a,b)$ differenzierbar.  Dann existiert ein $\xi \in
+    (a,b)$ mit
+        \[ f'(\xi) = \frac{f(b)-f(a)}{b-a} \]
+\end{satz}
+\begin{proof}
+    Man betrachte die Funktion $g \colon [a,b] \to \R$ mit
+    \[ g(x) = \frac{f(b)-f(a)}{b-a} \cdot (x-a) - f(x) \]
+    Es gilt, dass $g(a) = f(a) = g(b)$ und dass $g$ als Komposition differenzierbarer Funktion
+    wieder differenzierbar ist.  Aus dem Satz von Rolle folgt nun leicht die Behauptung.
+\end{proof}
+
+\section{Ausblick}
+Im Mehrdimensionalen definieren wir den Gradienten:
+    \[ \nabla f =
+        \begin{pmatrix}
+            \frac{\partial f}{\partial x_1} \\
+            \vdots \\
+            \frac{\partial f}{\partial x_n}
+        \end{pmatrix}
+        \begin{pmatrix}
+            x \\
+            y
+        \end{pmatrix}
+    \]
+
+\end{document}

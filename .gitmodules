@@ -1,0 +1,3 @@
+[submodule "presentation/f1rstlady"]
+	path = presentation/f1rstlady
+    url = https://github.com/f1rstlady/latex-config.git
