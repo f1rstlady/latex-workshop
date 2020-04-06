@@ -100,11 +100,11 @@
     \item Eine TeX-Datei (\monospaced{.tex}) beginnt in der Regel mit einer sog. \alert{Präambel}:
         \lstinputlisting[style=custom]{preamble.tex}
     \item In dieser werden alle Einstellungen des Dokuments festgelegt, wie z.B. Layout, eigene
-        Befehle und zusätzliche Pakete. \alert{Dies erzeugt noch keinen sichtbaren Output!}
+        Befehle und zusätzliche Pakete. Dies erzeugt noch keinen sichtbaren Output!
     \item Notwendig: \lstinline{\\documentclass\{...\}}-Befehl zu Beginn zum Festlegen der
-        Dokumentklasse.
+        \alert{Dokumentklasse}.
         \begin{itemize}
-            \item Empfohlen: \alert{KOMA-Script-Klassen} (\monospaced{scrartcl},
+            \item Empfohlen: KOMA-Script-Klassen (\monospaced{scrartcl},
                 \monospaced{scrreprt}, \monospaced{scrbook}, \dots) statt der Standardklassen
                 (\monospaced{article}, \monospaced{report}, \monospaced{book}, \dots)
         \end{itemize}
@@ -146,7 +146,7 @@
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item Man kann ein Dokument in Abschnitte unterteilen mittels
+    \item Man kann ein Dokument in \alert{Abschnitte} unterteilen mittels
         \begin{center}
             \lstinline{\\section\{Überschrift\}}
         \end{center}
@@ -158,8 +158,8 @@
         \begin{center}
             \lstinline{\\section*} statt \lstinline{\\section}
         \end{center}
-    \item Mittels \lstinline{\\tableofcontents} erzeugt man aus den Abschnitten ein
-        Inhaltsverzeichnis.
+    \item Mittels \lstinline{\\tableofcontents} erzeugt man aus den Überschriften ein
+        \alert{Inhaltsverzeichnis}.
 \end{itemize}
 \end{frame}
 
@@ -266,7 +266,7 @@ gesetzt werden:
     \item Es stellt Makros bereit um entsprechende Umgebungen zu erstellen und benutzen:
         \lstinputlisting[style=custom]{theorem.tex}
     \item Da das Erscheinungsbild in dieser Präsentation stark von dem in anderen Dokumentklassen
-        abweicht, probiert selbst mal aus.
+        abweicht, probiert es selbst mal aus.
 \end{itemize}
 \end{frame}
 
@@ -311,12 +311,14 @@ gesetzt werden:
 \end{itemize}
 Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 \begin{itemize}
-	\item Suchmaschine eurer Wahl mit passenden (vorzugsweise englischen) Begriffen oder Ausgaben des Compilers füttern.
+    \item \alert{Suchmaschine} eurer Wahl mit passenden (vorzugsweise englischen) Begriffen oder
+        Ausgaben des Compilers füttern.
 	\begin{center}
 		\includegraphics[keepaspectratio,width=8cm]{images/google.png}
 	\end{center}
-	\item LaTeX Stack Exchange: \url{https://tex.stackexchange.com}
-    \item In der Dokumentation eines Pakets nachschauen, verfügbar auf \url{https://ctan.org}
+	\item \alert{TeX StackExchange}: \url{https://tex.stackexchange.com}
+    \item In der \alert{Dokumentation} eines Pakets bzw. einer Dokumentklasse nachschauen, verfügbar
+        auf \url{https://ctan.org}
 \end{itemize}
 \end{frame}
 
