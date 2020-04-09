@@ -5,13 +5,11 @@
 \lstset{
     language = [LaTeX]{TeX},
     inputpath = examples,
-    keywordstyle = \color{Green4},
-}
+    keywordstyle = \color{Green4}}
 \lstdefinestyle{custom}{
     style = context,
     basicstyle = \ttfamily\scriptsize,
-    caption = {},
-}
+    caption = {}}
 \newcommand*{\monospaced}[1]{\texttt{\small #1}}
 
 % Macro to display examples
@@ -21,8 +19,7 @@
             \lstinputlisting{#1}
         \item[Output:]
             \input{examples/#1}
-    \end{description}
-}
+    \end{description}}
 
 % TeX workflow diagram
 \usepackage{smartdiagram}
@@ -39,12 +36,10 @@
 
 \frame{\frametitle{Übersicht}\tableofcontents}
 
-\AtBeginSection[]
-{
+\AtBeginSection[]{
     \begin{frame}
         \tableofcontents[currentsection, sectionstyle=show/shaded]
-    \end{frame}
-}
+    \end{frame}}
 
 \begin{frame}{Was ist \LaTeX?}
 \begin{itemize}
