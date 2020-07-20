@@ -25,6 +25,10 @@
 % TeX workflow diagram
 \usepackage{smartdiagram}
 
+% For the biblatex example
+\usepackage[style=alphabetic]{biblatex}
+\addbibresource{examples/bibliography.bib}
+
 % Information to be included in the title page:
 \title{\LaTeX~Workshop}
 \author{Benedikt Rips}
@@ -352,8 +356,22 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 
 \section{Weiteres}
 
-% TODO: Zitieren mit Biblatex
-%\subsection{Zitieren}
+\subsection{Literaturverweise}
+
+\begin{frame}{\subsecname}
+\begin{itemize}
+    \item Mit dem Paket \monospaced{biblatex} kann man schnell und einfach Literaturverweise
+        einfügen.
+        \lstinputlisting[style=custom]{biblatex_preamble.tex}
+    \item Die Daten der referenzierten \alert{Literatur} werden in einer
+        \monospaced{.bib}\hyp{}Datei angegeben:
+        \lstinputlisting[style=custom]{bibliography.bib}
+    \item Mit dem Befehl \lstinline{\\cite[<suffix>]\{<id>\}} erstellt man einen \alert{Verweis} auf
+        den Eintrag mit der angegebenen ID, das Suffix wird angehängt:
+        \code{biblatex.tex}
+    \item Die Zitierweise kann man anpassen (s. Dokumentation von \monospaced{biblatex}).
+\end{itemize}
+\end{frame}
 
 \subsection{Referenzen}
 

@@ -8,6 +8,8 @@ all : $(DOCNAME).pdf
 
 $(DOCNAME).pdf : $(DOCNAME).tex examples/* f1rstlady/**/* images/*
 	$(COMPILER) $(FLAGS) $<
+	biber $(DOCNAME)
+	$(COMPILER) $(FLAGS) $<
 	$(COMPILER) $(FLAGS) $<
 
 clean :
