@@ -117,8 +117,39 @@
 \end{itemize}
 \end{frame}
 
-% TODO: Whitespace und Paragraphen behandeln
-%\subsection{Whitespace}
+\subsection{Leerzeichen, Zeilenumbrüche \& Paragraphen}
+
+\begin{frame}{Leerzeichen}
+\begin{itemize}
+    \item Wörter werden durch Leerzeichen getrennt.  Die Anzahl der Leerzeichen ist aber irrelevant:
+        \code{whitespace.tex}
+    \item Möchte man unbedingt ein Leerzeichen erzeugen, so muss man eine Tilde einfügen:
+        \code{whitespace_non-breaking.tex}
+    \item Dies ist in der Regel nicht notwendig, da \LaTeX~normalerweise automatisch den richtigen
+        Abstand zwischen Wörten bestimmt.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Zeilenumbrüche}
+\begin{itemize}
+    \item Zeilenumbrüche im Quellcode übertragen sich im Allgemeinen nicht auf die PDF:
+        \code{newline.tex}
+    \item Man kann durch \lstinline{\\\\} einen Zeilenumbruch erzwingen:
+        \code{newline_forced.tex}
+    \item Auch hier gilt: Passende Stellen für Zeilenumbrüche werden in der Regel automatisch
+        bestimmt.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Paragraphen}
+\begin{itemize}
+    \item Um Text in Paragraphen zu teilen, muss man sie im Quellcode durch eine Leerzeile trennen:
+        \code{paragraph.tex}
+    \item Alternativ erzeugt der Befehl \lstinline{\\par} einen neuen Paragraphen.
+    \item Paragraphen werden standardmäßig nicht durch vertikalen Abstand, sondern Einrückung
+        hervorgehoben.
+\end{itemize}
+\end{frame}
 
 \subsection{Kommentare}
 
