@@ -170,8 +170,8 @@
         \end{center}
     \item Eine (nicht-nummerierte) Liste erzeugt man mit der \monospaced{itemize}-Umgebung:
         \code{itemize.tex}
-    \item Aufzählungssymbol kann lokal durch eckige Klammern (\lstinline{\\item[...]}) oder global
-        in der Präambel (\lstinline{\\setlist[itemize]\{label=...\}}) gesetzt werden.
+    \item Das Aufzählungssymbol kann lokal durch eckige Klammern (\lstinline{\\item[...]}) oder
+        global in der Präambel (\lstinline{\\setlist[itemize]\{label=...\}}) gesetzt werden.
 \end{itemize}
 \end{frame}
 
@@ -346,15 +346,15 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 \begin{itemize}
     \item Wenn man denselben Text/dieselbe Konstruktion häufig nutzt, kann es manchmal nützlich
         sein, dafür ein neues \alert{Makro} zu erstellen:
-        \code{macro-1.tex}
-    \item Der Befehl \lstinline{\\newcommand\{\\makro\}[n]\{...\#1...\#2...\#n...\}}
+        \code{macro_iprod.tex}
+    \item Der Befehl \lstinline{\\newcommand\{\\macro\}[n]\{...\#1...\#2...\#n...\}}
         \begin{itemize}
-            \item erstellt ein Makro namens \lstinline{\\makro}
-            \item mit $n$ Argumenten
+            \item erstellt ein Makro namens \lstinline{\\macro}
+            \item mit $n$ Argumenten,
             \item auf die im sog. \textit{Body} mit \lstinline{\#1}, \lstinline{\#2}, \dots,
                 \lstinline{\#n} referenziert wird.
         \end{itemize}
-        Es wird aufgerufen durch \lstinline{\\makro\{arg1\}\{arg2\}...\{argn\}}
+        Es wird aufgerufen durch \lstinline{\\macro\{arg1\}\{arg2\}...\{argn\}}
     \item Im obigen Beispiel wird \lstinline{\\iprod\{v\}\{w\}} ersetzt durch
         \begin{center}
             \lstinline{\\left\\langle v, w \\right\\langle}
