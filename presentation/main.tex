@@ -29,6 +29,9 @@
 \usepackage[style=alphabetic]{biblatex}
 \addbibresource{examples/bibliography.bib}
 
+% For the \DeclarePairedDelimiter example
+\usepackage{mathtools}
+
 % Information to be included in the title page:
 \title{\LaTeX~Workshop}
 \author{Benedikt Rips}
@@ -411,7 +414,24 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
         \end{center}
 \end{itemize}
 \end{frame}
-% TODO: Makros erweitern um \DeclarePairedDelimiter und \DeclareMathOperator
+
+\begin{frame}{Eigene Makros (für mathematische Formeln)}
+\begin{itemize}
+    \item Mit dem Paket \monospaced{mathtools} kann man kinderleicht eigene Makros für Klammern und
+        Operatoren definieren.
+    \item Klammern: \lstinline{\\DeclarePairedDelimiter\{\\macro\}\{<left>\}\{<right\}}.
+        \code{macro_iprod_paired-delimiter.tex}
+        \begin{itemize}
+            \item Vorteil: Es ist einfach, die Größe der Klammern zu ändern (s. Dokumentation von
+                \monospaced{mathtools}).
+        \end{itemize}
+    \item Operatoren: \lstinline{\\DeclareMathOperator\{\\macro\}\{<name>\}}.
+        \lstinputlisting[style=custom]{macro_operator.tex}
+        \begin{itemize}
+            \item Vorteil: Der Abstand zwischen dem Operator und dem Operanden ist korrekt.
+        \end{itemize}
+\end{itemize}
+\end{frame}
 
 % TODO: Einbindung von Source Code mit lstlistings
 %\subsection{Source Code}
