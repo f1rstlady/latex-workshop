@@ -2,11 +2,11 @@ DOCNAME?=main
 COMPILER?=lualatex
 FLAGS=--halt-on-error --file-line-error --synctex=1
 
-.PHONY : all clean cleanall $(DOCNAME).pdf
+.PHONY : all clean cleanall
 
 all : $(DOCNAME).pdf
 
-$(DOCNAME).pdf : $(DOCNAME).tex examples/*
+$(DOCNAME).pdf : $(DOCNAME).tex examples/* f1rstlady/**/* images/*
 	$(COMPILER) $(FLAGS) $<
 	$(COMPILER) $(FLAGS) $<
 
