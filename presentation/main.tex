@@ -11,10 +11,9 @@
     style = context,
     basicstyle = \ttfamily\scriptsize,
     caption = {}}
-\newcommand*{\monospaced}[1]{\texttt{\small #1}}
 
 % Macro to display examples
-\newcommand*{\code}[1]{
+\renewcommand*{\example}[1]{
     \begin{description}
         \item[Input:]
             \lstinputlisting{#1}
@@ -81,16 +80,16 @@
 \begin{frame}{\subsecname}
 \begin{itemize}
     \item Beim \enquote{\TeX{}en} verfasst man zunächst \alert{Quellcode} in einer simplen Textdatei
-        mit \monospaced{.tex}-Endung:
+        mit \texttt{.tex}\-/Endung:
         \lstinputlisting[style=custom]{minimal.tex}
     \item Ein \alert{Compiler} erzeugt daraus ein gewünschtes Output-Format:
         \begin{center}
-            \monospaced{> lualatex HelloWorld.tex}
+            \texttt{> lualatex HelloWorld.tex}
         \end{center}
     \item Es gibt verschiedene Compiler (für PDF-Ausgabe):
         \begin{itemize}
-            \item \alert{\monospaced{pdflatex}} wurde und wird immer noch viel verwendet.
-            \item \alert{\monospaced{lualatex}} ist modern und gilt als dessen Nachfolger.
+            \item \alert{\texttt{pdflatex}} wurde und wird immer noch viel verwendet.
+            \item \alert{\texttt{lualatex}} ist moderner und gilt als dessen Nachfolger.
         \end{itemize}
         Der Compiler muss ggf. im Editor eingestellt werden.
 \end{itemize}
@@ -100,25 +99,24 @@
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item Eine \TeX\hyp{}Datei (\monospaced{.tex}) beginnt in der Regel mit einer sog.
-        \alert{Präambel}:
+    \item Eine \TeX\-/Datei (\texttt{.tex}) beginnt in der Regel mit einer sog. \alert{Präambel}:
         \lstinputlisting[style=custom]{preamble.tex}
     \item In dieser werden alle Einstellungen des Dokuments festgelegt, wie z.B. Layout, eigene
         Befehle und zusätzliche Pakete. Dies erzeugt noch keinen sichtbaren Output!
-    \item Notwendig: \lstinline{\\documentclass\{...\}}-Befehl zu Beginn zum Festlegen der
+    \item Notwendig: \lstinline{\\documentclass\{...\}} zu Beginn zum Festlegen der
         \alert{Dokumentklasse}.
         \begin{itemize}
-            \item Empfohlen: KOMA-Script-Klassen (\monospaced{scrartcl},
-                \monospaced{scrreprt}, \monospaced{scrbook}, \dots) statt der Standardklassen
-                (\monospaced{article}, \monospaced{report}, \monospaced{book}, \dots)
+            \item Empfohlen: KOMA\-/Script\-/Klassen (\texttt{scrartcl}, \texttt{scrreprt},
+                \texttt{scrbook}, \dots) statt der Standardklassen (\texttt{article},
+                \texttt{report}, \texttt{book}, \dots)
         \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Grober Aufbau (2)}
 \begin{itemize}
-    \item Der eigentliche Inhalt, der ausgegeben werden soll, befindet sich in der
-        \monospaced{document}-Umgebung:
+    \item Der eigentliche Inhalt, der ausgegeben werden soll, befindet sich in der Umgebung
+        \texttt{document}:
         \lstinputlisting[style=custom]{document.tex}
     \item Text nach \lstinline{\\end\{document\}} wird nicht verarbeitet.
 \end{itemize}
@@ -129,9 +127,9 @@
 \begin{frame}{Leerzeichen}
 \begin{itemize}
     \item Wörter werden durch Leerzeichen getrennt.  Die Anzahl der Leerzeichen ist aber irrelevant:
-        \code{whitespace.tex}
+        \example{whitespace.tex}
     \item Möchte man unbedingt ein Leerzeichen erzeugen, so muss man eine Tilde einfügen:
-        \code{whitespace_non-breaking.tex}
+        \example{whitespace_non-breaking.tex}
     \item Dies ist in der Regel nicht notwendig, da \LaTeX~normalerweise automatisch den richtigen
         Abstand zwischen Wörten bestimmt.
 \end{itemize}
@@ -140,9 +138,9 @@
 \begin{frame}{Zeilenumbrüche}
 \begin{itemize}
     \item Zeilenumbrüche im Quellcode übertragen sich im Allgemeinen nicht auf die PDF:
-        \code{newline.tex}
+        \example{newline.tex}
     \item Man kann durch \lstinline{\\\\} einen Zeilenumbruch erzwingen:
-        \code{newline_forced.tex}
+        \example{newline_forced.tex}
     \item Auch hier gilt: Passende Stellen für Zeilenumbrüche werden in der Regel automatisch
         bestimmt.
 \end{itemize}
@@ -151,7 +149,7 @@
 \begin{frame}{Paragraphen}
 \begin{itemize}
     \item Um Text in Paragraphen zu teilen, muss man sie im Quellcode durch eine Leerzeile trennen:
-        \code{paragraph.tex}
+        \example{paragraph.tex}
     \item Alternativ erzeugt der Befehl \lstinline{\\par} einen neuen Paragraphen.
     \item Paragraphen werden standardmäßig nicht durch vertikalen Abstand, sondern Einrückung
         hervorgehoben.
@@ -162,9 +160,9 @@
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item Alles, was einem \enquote{\monospaced{\%}} folgt, wird ignoriert und taucht nicht im
+    \item Alles, was einem \enquote{\texttt{\%}} folgt, wird ignoriert und taucht nicht im
         generierten Dokument auf:
-        \code{comments.tex}
+        \example{comments.tex}
     \item Dies erlaubt es, den Text mit \alert{Kommentaren} zu versehen.
     \item Nützlich, um Gedanken und Erklärungen und Notizen aufzuschreiben, die vor dem Leser
         verborgen bleiben sollen.
@@ -203,12 +201,12 @@
 \begin{frame}{Listen}
 \begin{itemize}
     \item Ein weiteres nützliches Hilfsmittel sind \alert{Listen}. Ein hilfreiches Paket dafür ist
-        \monospaced{enumitem}, das wie folgt in der Präambel eingebunden werden sollte:
+        \texttt{enumitem}, das wie folgt in der Präambel eingebunden werden sollte:
         \begin{center}
             \lstinline{\\usepackage[shortlabels]\{enumitem\}}
         \end{center}
-    \item Eine (nicht-nummerierte) Liste erzeugt man mit der \monospaced{itemize}-Umgebung:
-        \code{itemize.tex}
+    \item Eine (nicht-nummerierte) Liste erzeugt man mit der Umgebung \texttt{itemize}:
+        \example{itemize.tex}
     \item Das Aufzählungssymbol kann lokal durch eckige Klammern (\lstinline{\\item[...]}) oder
         global in der Präambel (\lstinline{\\setlist[itemize]\{label=...\}}) gesetzt werden.
 \end{itemize}
@@ -216,8 +214,8 @@
 
 \begin{frame}{Aufzählungen}
 \begin{itemize}
-    \item Nummerierte Listen lassen sich mit der \monospaced{enumerate}-Umgebung erzeugen:
-        \code{enumerate.tex}
+    \item Nummerierte Listen lassen sich mit der Umgebung \texttt{enumerate} erzeugen:
+        \example{enumerate.tex}
     \item Durch die eckigen Klammern nach \lstinline{\\begin\{enumerate\}} kann die Nummerierung und
         Klammerung angepasst werden.
         \begin{itemize}
@@ -228,9 +226,9 @@
 
 \begin{frame}{Beschreibungen}
 \begin{itemize}
-    \item Die \monospaced{description}-Umgebung eignet sich zur Auflistung von Begriffen mit
-        zugehörigen Beschreibungen:
-        \code{description.tex}
+    \item Die Umgebung \texttt{description} eignet sich zur Auflistung von Begriffen mit zugehörigen
+        Beschreibungen:
+        \example{description.tex}
 \end{itemize}
 \end{frame}
 
@@ -241,20 +239,20 @@ Mathematische Formeln können auf verschiedene Arten und Weisen im so genannten 
 gesetzt werden:
 \begin{itemize}
     \item Innerhalb von Fließtext (\alert{inline math}) mittels \lstinline{$...$}:
-        \code{inline_math.tex}
+        \example{inline_math.tex}
     \item Abgesetzt in einer separaten Zeile (\alert{display math}) mittels \lstinline{[...]}:
-        \code{display_math.tex}
+        \example{display_math.tex}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Indizes und Exponenten}
 \begin{itemize}
     \item Indizes:
-        \code{indices.tex}
+        \example{indices.tex}
         Beachte: Für Indizes mit mehr als einem Zeichen muss der Index in geschweifte Klammern
         gesetzt werden: \lstinline{v_\{i-1\}}.
     \item Exponenten:
-        \code{exponents.tex}
+        \example{exponents.tex}
         Beachte: Wie bei Indizes müssen mehrere Zeichen in geschweifte Klammern gesetzt werden:
         \lstinline{n^\{k+1\}}.
 \end{itemize}
@@ -262,24 +260,24 @@ gesetzt werden:
 
 \begin{frame}{Mehrzeilige Formeln}
 \begin{itemize}
-    \item Für mehrzeilige Rechnungen bieten sich Umgebungen wie \monospaced{align} an:
-        \code{align.tex}
+    \item Für mehrzeilige Rechnungen bieten sich Umgebungen wie \texttt{align} an:
+        \example{align.tex}
     \item Die Zeilen werden dabei anhand der \lstinline{&} ausgerichtet.
-    \item Andere nützliche Umgebungen sind \monospaced{equation}, \monospaced{gather},
-        \monospaced{array}, \monospaced{multiline}.
-    \item Diese Umgebungen werden vom Paket \monospaced{amsmath} bereitgestellt, welches daher bei
+    \item Andere nützliche Umgebungen sind \texttt{equation}, \texttt{gather}, \texttt{array},
+        \texttt{multiline}.
+    \item Diese Umgebungen werden vom Paket \texttt{amsmath} bereitgestellt, welches daher bei
         Bedarf in der Präambel eingebunden werden muss:
         \begin{center}
             \lstinline{\\usepackage\{amsmath\}}
         \end{center}
     \item Nummerierung kann mit \lstinline{\\nonumber} pro Zeile ausgeschaltet werden – oder man
-        nutzt \monospaced{align*} statt \monospaced{align}.
+        nutzt \texttt{align*} statt \texttt{align}.
 \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Mathematische Symbole}
 \begin{itemize}
-    \item Das Paket \monospaced{amssymb} enthält weitere mathematische Symbole:
+    \item Das Paket \texttt{amssymb} enthält weitere mathematische Symbole:
         \begin{center}
             \lstinline{\\usepackage\{amssymb\}}
         \end{center}
@@ -294,7 +292,7 @@ gesetzt werden:
 \begin{frame}{Sätze, Lemmata und Beweise}
 \begin{itemize}
     \item Um elegant und einfach Sätze, Lemmata, Beweise, etc. zu setzen, eignet sich das Paket
-        \monospaced{amsthm}:
+        \texttt{amsthm}:
         \begin{center}
             \lstinline{\\usepackage\{amsthm\}}
         \end{center}
@@ -308,7 +306,7 @@ gesetzt werden:
 \begin{frame}{Sätze, Lemmata und Beweise (2)}
 \begin{itemize}
     \item Der Befehl \lstinline{\\newtheorem\{<env_name>\}\{<name>\}} erstellt eine neue
-        Theorem-Umgebung namens \monospaced{<env\_name>}, die im Dokument als \monospaced{<name>}
+        Theorem-Umgebung namens \texttt{<env\_name>}, die im Dokument als \texttt{<name>}
         erscheint.
         \begin{itemize}
             \item Damit lassen sich insbesondere Umgebungen für Lemmata, Beispiele, Bemerkungen etc.
@@ -340,20 +338,21 @@ gesetzt werden:
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item \LaTeX enthält bei weitem mehr Funktionalität als wir euch in diesem Workshop präsentieren
+    \item \LaTeX\ enthält bei weitem mehr Funktionalität als wir euch in diesem Workshop präsentieren
         können.
     \item Oft werdet ihr Fehler beim Kompilieren bekommen.
 \end{itemize}
 Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 \begin{itemize}
-    \item \alert{Suchmaschine} eurer Wahl mit passenden (vorzugsweise englischen) Begriffen oder
-        Ausgaben des Compilers füttern.
-	\begin{center}
-		\includegraphics[keepaspectratio,width=8cm]{images/google.png}
-	\end{center}
-	\item \alert{\TeX~StackExchange}: \url{https://tex.stackexchange.com}
+    \item Eine \alert{Suchmaschine} eurer Wahl mit passenden (vorzugsweise englischen) Begriffen
+        oder Ausgaben des Compilers füttern.
+        \begin{center}
+            \includegraphics[keepaspectratio,width=8cm]{images/google.png}
+        \end{center}
+    \item Auf \href{https://tex.stackexchange.com}{\alert{\TeX~StackExchange}}, einem
+        Frage-Antwort-Forum
     \item In der \alert{Dokumentation} eines Pakets bzw. einer Dokumentklasse nachschauen, verfügbar
-        auf \url{https://ctan.org}
+        auf \href{https://ctan.org}{CTAN}
 \end{itemize}
 \end{frame}
 
@@ -363,16 +362,15 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item Mit dem Paket \monospaced{biblatex} kann man schnell und einfach Literaturverweise
-        einfügen.
+    \item Mit dem Paket \texttt{biblatex} kann man schnell und einfach Literaturverweise einfügen.
         \lstinputlisting[style=custom]{biblatex_preamble.tex}
-    \item Die Daten der referenzierten \alert{Literatur} werden in einer
-        \monospaced{.bib}\hyp{}Datei angegeben:
+    \item Die Daten der referenzierten \alert{Literatur} werden in einer \texttt{.bib}\hyp{}Datei
+        angegeben:
         \lstinputlisting[style=custom]{bibliography.bib}
     \item Mit dem Befehl \lstinline{\\cite[<suffix>]\{<id>\}} erstellt man einen \alert{Verweis} auf
         den Eintrag mit der angegebenen ID, das Suffix wird angehängt:
-        \code{biblatex.tex}
-    \item Die Zitierweise kann man anpassen (s. Dokumentation von \monospaced{biblatex}).
+        \example{biblatex.tex}
+    \item Die Zitierweise kann man anpassen (s. Dokumentation von \texttt{biblatex}).
 \end{itemize}
 \end{frame}
 
@@ -380,9 +378,9 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 
 \begin{frame}{\subsecname}
 \begin{itemize}
-    \item Wie vorher gesehen, werden z.B. Formeln mit der \monospaced{equation}-Umgebung nummeriert.
-        Im restlichen Dokument kann man nun darauf \alert{referenzieren}:
-        \code{references.tex}
+    \item Wie vorher gesehen, werden z.B. Formeln mit der Umgebung \texttt{equation} nummeriert.  Im
+        restlichen Dokument kann man nun darauf \alert{referenzieren}:
+        \example{references.tex}
     \item Mit \lstinline{\\label\{<name>\}} definiert man an der Stelle der Nummerierung ein
         \alert{Label}, auf das man später mit \lstinline{\\ref\{<name>\}}  verweisen kann.
         \begin{itemize}
@@ -399,7 +397,7 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 \begin{itemize}
     \item Wenn man denselben Text/dieselbe Konstruktion häufig nutzt, kann es manchmal nützlich
         sein, dafür ein neues \alert{Makro} zu erstellen:
-        \code{macro_iprod.tex}
+        \example{macro_iprod.tex}
     \item Der Befehl \lstinline{\\newcommand\{\\macro\}[n]\{...\#1...\#2...\#n...\}}
         \begin{itemize}
             \item erstellt ein Makro namens \lstinline{\\macro}
@@ -417,13 +415,13 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 
 \begin{frame}{Eigene Makros (für mathematische Formeln)}
 \begin{itemize}
-    \item Mit dem Paket \monospaced{mathtools} kann man kinderleicht eigene Makros für Klammern und
+    \item Mit dem Paket \texttt{mathtools} kann man kinderleicht eigene Makros für Klammern und
         Operatoren definieren.
     \item Klammern: \lstinline{\\DeclarePairedDelimiter\{\\macro\}\{<left>\}\{<right\}}.
-        \code{macro_iprod_paired-delimiter.tex}
+        \example{macro_iprod_paired-delimiter.tex}
         \begin{itemize}
             \item Vorteil: Es ist einfach, die Größe der Klammern zu ändern (s. Dokumentation von
-                \monospaced{mathtools}).
+                \texttt{mathtools}).
         \end{itemize}
     \item Operatoren: \lstinline{\\DeclareMathOperator\{\\macro\}\{<name>\}}.
         \lstinputlisting[style=custom]{macro_operator.tex}
