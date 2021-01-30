@@ -6,7 +6,7 @@ FLAGS=--halt-on-error --file-line-error --synctex=1
 
 all : $(DOCNAME).pdf
 
-$(DOCNAME).pdf : $(DOCNAME).tex examples/* f1rstlady/**/* images/*
+$(DOCNAME).pdf : $(DOCNAME).tex examples/* f1rstlady/** images/*
 	$(COMPILER) $(FLAGS) $<
 	biber $(DOCNAME)
 	$(COMPILER) $(FLAGS) $<
