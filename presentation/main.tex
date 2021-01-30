@@ -54,8 +54,8 @@
 \begin{itemize}
     \item Ein Textsatzsystem zum Setzen ansprechender Texte mit mathematischen Inhalten.
         (Eigentlich: Erweiterung für das Textsatzsystem \TeX)
-    \item De-facto-Standard in Mathematik, Informatik, Naturwissenschaften und mathematiknahen
     \smallskip
+    \item De\-/facto\-/Standard in Mathematik, Informatik, Naturwissenschaften und mathematiknahen
         Disziplinen
     \smallskip
     \item Kostenlose Open Source Software
@@ -86,11 +86,11 @@
     \item Beim \enquote{\TeX{}en} verfasst man zunächst \alert{Quellcode} in einer simplen Textdatei
         mit \texttt{.tex}\-/Endung:
         \lstinputlisting[style=custom]{minimal.tex}
-    \item Ein \alert{Compiler} erzeugt daraus ein gewünschtes Output-Format:
+    \item Ein \alert{Compiler} erzeugt daraus ein gewünschtes Output\-/Format:
         \begin{center}
             \texttt{> lualatex HelloWorld.tex}
         \end{center}
-    \item Es gibt verschiedene Compiler (für PDF-Ausgabe):
+    \item Es gibt verschiedene Compiler (für PDF\-/Ausgabe):
         \begin{itemize}
             \item \alert{\texttt{pdflatex}} wurde und wird immer noch viel verwendet.
             \item \alert{\texttt{lualatex}} ist moderner und gilt als dessen Nachfolger.
@@ -173,7 +173,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{\TeX\hyp{}Workflow}
+\begin{frame}{\TeX\-/Workflow}
 \begin{center}
     \smartdiagram[circular diagram:clockwise]{Quellcode schreiben, kompilieren, Output begutachten}
 \end{center}
@@ -209,7 +209,7 @@
         \begin{center}
             \lstinline{\\usepackage[shortlabels]\{enumitem\}}
         \end{center}
-    \item Eine (nicht-nummerierte) Liste erzeugt man mit der Umgebung \texttt{itemize}:
+    \item Eine (nicht\-/nummerierte) Liste erzeugt man mit der Umgebung \texttt{itemize}:
         \example{itemize.tex}
     \item Das Aufzählungssymbol kann lokal durch eckige Klammern (\lstinline{\\item[...]}) oder
         global in der Präambel (\lstinline{\\setlist[itemize]\{label=...\}}) gesetzt werden.
@@ -310,13 +310,13 @@ gesetzt werden:
 \begin{frame}{Sätze, Lemmata und Beweise (2)}
 \begin{itemize}
     \item Der Befehl \lstinline{\\newtheorem\{<env_name>\}\{<name>\}} erstellt eine neue
-        Theorem-Umgebung namens \texttt{<env\_name>}, die im Dokument als \texttt{<name>}
+        Theorem\-/Umgebung namens \texttt{<env\_name>}, die im Dokument als \texttt{<name>}
         erscheint.
         \begin{itemize}
             \item Damit lassen sich insbesondere Umgebungen für Lemmata, Beispiele, Bemerkungen etc.
                 erstellen.
         \end{itemize}
-    \item Wie für Abschnitte gibt es auch für Theorem-Umgebungen unnummmerierte Varianten:
+    \item Wie für Abschnitte gibt es auch für Theorem\-/Umgebungen unnummmerierte Varianten:
         \begin{center}
             \lstinline{\\newtheorem*\{<env_name>\}\{<name>\}}
         \end{center}
@@ -355,7 +355,7 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
             \includegraphics[keepaspectratio,width=8cm]{images/google.png}
         \end{center}
     \item Auf \href{https://tex.stackexchange.com}{\alert{\TeX~StackExchange}}, einem
-        Frage-Antwort-Forum
+        Frage\-/Antwort\-/Forum
     \item In der \alert{Dokumentation} eines Pakets bzw. einer Dokumentklasse nachschauen, verfügbar
         auf \href{https://ctan.org}{CTAN}
 \end{itemize}
@@ -369,7 +369,7 @@ Deshalb ein paar Tips, wo man Hilfe und weiterführende Informationen findet:
 \begin{itemize}
     \item Mit dem Paket \texttt{biblatex} kann man schnell und einfach Literaturverweise einfügen.
         \lstinputlisting[style=custom]{biblatex_preamble.tex}
-    \item Die Daten der referenzierten \alert{Literatur} werden in einer \texttt{.bib}\hyp{}Datei
+    \item Die Daten der referenzierten \alert{Literatur} werden in einer \texttt{.bib}\-/Datei
         angegeben:
         \lstinputlisting[style=custom]{bibliography.bib}
     \item Mit dem Befehl \lstinline{\\cite[<suffix>]\{<id>\}} erstellt man einen \alert{Verweis} auf
