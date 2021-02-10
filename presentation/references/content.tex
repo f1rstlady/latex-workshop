@@ -1,14 +1,14 @@
 \subsection{Referenzen}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     \begin{itemize}
         \item Wie vorher gesehen, werden z.B. Formeln mit der Umgebung \texttt{equation} nummeriert.
             Im restlichen Dokument kann man nun darauf \alert{referenzieren}:
             \example*{example.tex}
-        \item Mit \code{\\label\{<name>\}} definiert man an der Stelle der Nummerierung ein
-            \alert{Label}, auf das man später mit \code{\\ref\{<name>\}} verweisen kann.
+        \item Mit \code{\label{<name>}} definiert man an der Stelle der Nummerierung ein
+            \alert{Label}, auf das man später mit \code{\ref{<name>}} verweisen kann.
             \begin{itemize}
-                \item Spezialfall: \code{\\eqref\{<name>\}} bei Gleichungen und Formeln
+                \item Spezialfall: \code{\eqref{<name>}} bei Gleichungen und Formeln
             \end{itemize}
         \item Dies funktioniert mit allem, was nummeriert wird, z.\,B. Abschnitten und Figuren.
     \end{itemize}

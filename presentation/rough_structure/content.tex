@@ -1,13 +1,13 @@
 \subsection{Grober Aufbau}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     \begin{itemize}
         \item Eine \TeX\-/Datei (\texttt{.tex}) beginnt in der Regel mit einer sog.
             \alert{Präambel}:
             \example{examples/preamble.tex}
         \item In dieser werden alle Einstellungen des Dokuments festgelegt, wie z.B. Layout, eigene
             Befehle und zusätzliche Pakete. Dies erzeugt noch keinen sichtbaren Output!
-        \item Notwendig: \code{\\documentclass\{...\}} zu Beginn zum Festlegen der
+        \item Notwendig: \code{\documentclass{...}} zu Beginn zum Festlegen der
             \alert{Dokumentklasse}.
             \begin{itemize}
                 \item Empfohlen: KOMA\-/Script\-/Klassen (\texttt{scrartcl}, \texttt{scrreprt},
@@ -17,11 +17,11 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{\subsecname~(2)}
+\begin{frame}[fragile]{\subsecname~(2)}
     \begin{itemize}
         \item Der eigentliche Inhalt, der ausgegeben werden soll, befindet sich in der Umgebung
             \texttt{document}:
             \example{examples/document.tex}
-        \item Text nach \code{\\end\{document\}} wird nicht verarbeitet.
+        \item Text nach \code{\end{document}} wird nicht verarbeitet.
     \end{itemize}
 \end{frame}

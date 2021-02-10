@@ -1,6 +1,6 @@
 \subsection{Leerzeichen, Zeilenumbrüche \& Paragraphen}
 
-\begin{frame}{Leerzeichen}
+\begin{frame}[fragile]{Leerzeichen}
     \begin{itemize}
         \item Wörter werden durch Leerzeichen getrennt.  Die Anzahl der Leerzeichen ist aber
             irrelevant:
@@ -12,23 +12,23 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Zeilenumbrüche}
+\begin{frame}[fragile]{Zeilenumbrüche}
     \begin{itemize}
         \item Zeilenumbrüche im Quellcode übertragen sich im Allgemeinen nicht auf die PDF:
             \example*{examples/newline.tex}
-        \item Man kann durch \code{\\\\} einen Zeilenumbruch erzwingen:
+        \item Man kann durch \code{\\} einen Zeilenumbruch erzwingen:
             \example*{examples/newline_forced.tex}
         \item Auch hier gilt: Passende Stellen für Zeilenumbrüche werden in der Regel automatisch
             bestimmt.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Paragraphen}
+\begin{frame}[fragile]{Paragraphen}
     \begin{itemize}
         \item Um Text in Paragraphen zu teilen, muss man sie im Quellcode durch eine Leerzeile
             trennen:
             \example*{examples/paragraph.tex}
-        \item Alternativ erzeugt der Befehl \code{\\par} einen neuen Paragraphen.
+        \item Alternativ erzeugt der Befehl \code{\par} einen neuen Paragraphen.
         \item Paragraphen werden standardmäßig nicht durch vertikalen Abstand, sondern Einrückung
             hervorgehoben.
     \end{itemize}

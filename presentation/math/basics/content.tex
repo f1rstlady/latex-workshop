@@ -1,6 +1,6 @@
 \subsection{Mathematische Formeln}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     Mathematische Formeln können auf verschiedene Arten und Weisen im so genannten \alert{math mode}
     gesetzt werden:
     \begin{itemize}
@@ -11,20 +11,20 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Indizes und Exponenten}
+\begin{frame}[fragile]{Indizes und Exponenten}
     \begin{itemize}
         \item Indizes:
             \example*{examples/indices.tex}
             Beachte: Für Indizes mit mehr als einem Zeichen muss der Index in geschweifte Klammern
-            gesetzt werden: \code{v_\{i-1\}}.
+            gesetzt werden: \code{v_{i-1}}.
         \item Exponenten:
             \example*{examples/exponents.tex}
             Beachte: Wie bei Indizes müssen mehrere Zeichen in geschweifte Klammern gesetzt werden:
-            \code{n^\{k+1\}}.
+            \code{n^{k+1}}.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Mehrzeilige Formeln}
+\begin{frame}[fragile]{Mehrzeilige Formeln}
     \begin{itemize}
         \item Für mehrzeilige Rechnungen bieten sich Umgebungen wie \texttt{align} an:
             \example*{examples/align.tex}
@@ -34,18 +34,18 @@
         \item Diese Umgebungen werden vom Paket \texttt{amsmath} bereitgestellt, welches daher bei
             Bedarf in der Präambel eingebunden werden muss:
             \begin{center}
-                \code{\\usepackage\{amsmath\}}
+                \code{\usepackage{amsmath}}
             \end{center}
-        \item Nummerierung kann mit \code{\\nonumber} pro Zeile ausgeschaltet werden -- oder man
+        \item Nummerierung kann mit \code{\nonumber} pro Zeile ausgeschaltet werden -- oder man
             nutzt \texttt{align*} statt \texttt{align}.
     \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Mathematische Symbole}
+\begin{frame}[fragile,t]{Mathematische Symbole}
     \begin{itemize}
         \item Das Paket \texttt{amssymb} enthält weitere mathematische Symbole:
             \begin{center}
-                \code{\\usepackage\{amssymb\}}
+                \code{\usepackage{amssymb}}
             \end{center}
         \item Falls man einen Befehl für ein bestimmtes mathematisches Symbol sucht, hilft der Dienst
             \href{http://detexify.kirelabs.org/classify.html}{\alert{Detexify}} weiter:

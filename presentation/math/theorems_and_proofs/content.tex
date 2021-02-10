@@ -1,11 +1,11 @@
 \subsection{Sätze, Lemmata und Beweise}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     \begin{itemize}
         \item Um elegant und einfach Sätze, Lemmata, Beweise, etc. zu setzen, eignet sich das Paket
             \texttt{amsthm}:
             \begin{center}
-                \code{\\usepackage\{amsthm\}}
+                \code{\usepackage{amsthm}}
             \end{center}
         \item Es stellt Makros bereit um entsprechende Umgebungen zu erstellen und benutzen:
             \example{example.tex}
@@ -14,9 +14,9 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{\subsecname~(2)}
+\begin{frame}[fragile]{\subsecname~(2)}
     \begin{itemize}
-        \item Der Befehl \code{\\newtheorem\{<env_name>\}\{<name>\}} erstellt eine neue
+        \item Der Befehl \code{\newtheorem{<env_name>}{<name>}} erstellt eine neue
             Theorem\-/Umgebung namens \texttt{<env\_name>}, die im Dokument als \texttt{<name>}
             erscheint.
             \begin{itemize}
@@ -25,8 +25,8 @@
             \end{itemize}
         \item Wie für Abschnitte gibt es auch für Theorem\-/Umgebungen unnummmerierte Varianten:
             \begin{center}
-                \code{\\newtheorem*\{<env_name>\}\{<name>\}}
+                \code{\newtheorem*{<env_name>}{<name>}}
             \end{center}
-            funktioniert wie \code{\\newtheorem}, erstellt aber eine unnummerierte Umgebung.
+            funktioniert wie \code{\newtheorem}, erstellt aber eine unnummerierte Umgebung.
     \end{itemize}
 \end{frame}

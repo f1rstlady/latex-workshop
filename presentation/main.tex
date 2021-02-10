@@ -10,36 +10,61 @@
 
 % Source code integration
 \usepackage{f1rstlady/sourcecode}
-\lstset{
-    language = [LaTeX]{TeX},
-    keywordstyle = \color{Green4}
-}
+\setminted
+    { bgcolor = {}
+    , numbers = none
+    }
 
 % Show examples of LaTeX code with \example{<file>}, where <file> is relative to this file's base
 % directory.  The starred variant \example* also executes the example.
 \makeatletter
-\newcommand*{\example@showonly}[1]{
-    \lstinputlisting
-        [ style = context
-        , basicstyle = \small\ttfamily
-        , caption = {}
-        ]{\thistopic/#1}
+
+\usepackage{mdframed}
+\newenvironment{examplebox}
+{
+    \par
+    \small
+    \begin{mdframed}
+        [ backgroundcolor = gray!08
+        , hidealllines = true
+        , topline = true
+        , bottomline = true
+        , innerleftmargin = -2em
+        , skipabove = 1.2\smallskipamount
+        ]
+}{
+    \end{mdframed}
+    \vspace{0.1\smallskipamount}
+    \par
 }
-\newcommand*{\example@showandexecute}[1]{
-    \begin{description}
-        \item[Input:]  \lstinputlisting{\thistopic/#1}
-        \item[Output:] \input{\thistopic/#1}
-    \end{description}
+
+\newcommand*{\example@showonly}[2][latex]{
+    \begin{examplebox}
+        \begin{description}
+            \item[Input:] \inputminted{#1}{\thistopic/#2}
+        \end{description}
+    \end{examplebox}
 }
+
+\newcommand*{\example@showandexecute}[2][latex]{
+    \begin{examplebox}
+        \begin{description}
+            \item[Input:]  \inputminted{#1}{\thistopic/#2}
+            \item[Output:] \input{\thistopic/#2}
+        \end{description}
+    \end{examplebox}
+}
+
 \renewcommand*{\example}{
     \@ifstar
         \example@showandexecute
         \example@showonly
 }
+
 \makeatother
 
 % Put code inline with \code
-\newcommand*{\code}[1]{\lstinline{#1}}
+\newcommand*{\code}[1][latex]{\mintinline{#1}}
 
 \includetopic[preamble]{what_and_why}
 \includetopic[preamble]{workflow}

@@ -1,21 +1,21 @@
 \subsection{Eigene Makros}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     \begin{itemize}
         \item Wenn man denselben Text/dieselbe Konstruktion häufig nutzt, kann es manchmal nützlich
             sein, dafür ein neues \alert{Makro} zu erstellen:
             \example*{example.tex}
-        \item Der Befehl \code{\\newcommand\{\\macro\}[n]\{...\#1...\#2...\#n...\}}
+        \item Der Befehl \code{\newcommand{\macro}[n]{...#1...#2...#n...}}
             \begin{itemize}
-                \item erstellt ein Makro namens \code{\\macro}
+                \item erstellt ein Makro namens \code{\macro}
                 \item mit $n$ Argumenten,
-                \item auf die im sog. \textit{Body} mit \code{\#1}, \code{\#2}, \dots, \code{\#n}
+                \item auf die im sog. \textit{Body} mit \code{#1}, \code{#2}, \dots, \code{#n}
                     referenziert wird.
             \end{itemize}
-            Es wird aufgerufen durch \code{\\macro\{arg1\}\{arg2\}...\{argn\}}
-        \item Im obigen Beispiel wird \code{\\iprod\{v\}\{w\}} ersetzt durch
+            Es wird aufgerufen durch \code{\macro{arg1}{arg2}...{argn}}
+        \item Im obigen Beispiel wird \code{\iprod{v}{w}} ersetzt durch
             \begin{center}
-                \code{\\left\\langle v, w \\right\\langle}
+                \code{\left\langle v, w \right\langle}
             \end{center}
     \end{itemize}
 \end{frame}

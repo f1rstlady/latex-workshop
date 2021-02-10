@@ -1,13 +1,13 @@
 \subsection{Literaturverweise}
 
-\begin{frame}{\subsecname}
+\begin{frame}[fragile]{\subsecname}
     \begin{itemize}
         \item Mit dem Paket \texttt{biblatex} kann man Literaturverweise einfügen.
             \example{examples/preamble.tex}
         \item Die Daten der referenzierten \alert{Literatur} werden in einer \texttt{.bib}\-/Datei
             angegeben:
-            \example{examples/bibliography.bib}
-        \item Mit dem Befehl \code{\\cite[<suffix>]\{<id>\}} erstellt man einen \alert{Verweis} auf
+            \example[bibtex]{examples/bibliography.bib}
+        \item Mit dem Befehl \code{\cite[<suffix>]{<id>}} erstellt man einen \alert{Verweis} auf
             den Eintrag mit der angegebenen ID, das Suffix wird angehängt:
             \example*{examples/citation.tex}
         \item Die Zitierweise kann man anpassen (s. Dokumentation von \texttt{biblatex}).
