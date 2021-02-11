@@ -1,0 +1,35 @@
+\subsection{Listen, Aufzählungen, Beschreibungen}
+
+\begin{frame}{Listen}
+    \begin{itemize}
+        \item Ein weiteres nützliches Hilfsmittel sind \alert{Listen}. Ein hilfreiches Paket dafür
+            ist \texttt{enumitem}, das wie folgt in der Präambel eingebunden werden sollte:
+            \begin{center}
+                \code{\\usepackage[shortlabels]\{enumitem\}}
+            \end{center}
+        \item Eine (nicht\-/nummerierte) Liste erzeugt man mit der Umgebung \texttt{itemize}:
+            \example*{examples/itemize.tex}
+        \item Das Aufzählungssymbol kann lokal durch eckige Klammern (\code{\\item[...]}) oder
+            global in der Präambel (\code{\\setlist[itemize]\{label=...\}}) gesetzt werden.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Aufzählungen}
+    \begin{itemize}
+        \item Nummerierte Listen lassen sich mit der Umgebung \texttt{enumerate} erzeugen:
+            \example*{examples/enumerate.tex}
+        \item Durch die eckigen Klammern nach \code{\\begin\{enumerate\}} kann die Nummerierung
+            und Klammerung angepasst werden.
+            \begin{itemize}
+                \item z.B. \code{[(i)], [1)], [A.],} \dots
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Beschreibungen}
+    \begin{itemize}
+        \item Die Umgebung \texttt{description} eignet sich zur Auflistung von Begriffen mit
+            zugehörigen Beschreibungen:
+            \example*{examples/description.tex}
+    \end{itemize}
+\end{frame}

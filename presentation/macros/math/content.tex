@@ -1,0 +1,17 @@
+\begin{frame}{Eigene Makros (für mathematische Formeln)}
+    \begin{itemize}
+        \item Mit dem Paket \texttt{mathtools} kann man kinderleicht eigene Makros für Klammern und
+            Operatoren definieren.
+        \item Klammern: \code{\\DeclarePairedDelimiter\{\\macro\}\{<left>\}\{<right\}}.
+            \example*{examples/paired_delimiter.tex}
+            \begin{itemize}
+                \item Vorteil: Es ist einfach, die Größe der Klammern zu ändern (s. Dokumentation
+                    von \texttt{mathtools}).
+            \end{itemize}
+        \item Operatoren: \code{\\DeclareMathOperator\{\\macro\}\{<name>\}}.
+            \example{examples/operator.tex}
+            \begin{itemize}
+                \item Vorteil: Der Abstand zwischen dem Operator und dem Operanden ist korrekt.
+            \end{itemize}
+    \end{itemize}
+\end{frame}

@@ -6,9 +6,24 @@ FLAGS?=--halt-on-error --file-line-error --synctex=1
 
 all : $(DOCUMENTS)
 
-%.pdf : %.tex examples/* f1rstlady/** images/*
+main.pdf : main.tex \
+		   f1rstlady/** \
+		   bibliography/** \
+		   comments/** \
+		   exercise/** \
+		   help/** \
+		   lists/** \
+		   macros/** \
+		   math/** \
+		   minimal_example/** \
+		   references/** \
+		   rough_structure/** \
+		   sectioning/** \
+		   spaces_lines_paragraphs/** \
+		   what_and_why/** \
+		   workflow/**
 	$(COMPILER) $(FLAGS) $<
-	biber $*
+	biber main
 	$(COMPILER) $(FLAGS) $<
 	$(COMPILER) $(FLAGS) $<
 

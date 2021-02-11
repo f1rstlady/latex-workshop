@@ -1,0 +1,27 @@
+\subsection{Grober Aufbau}
+
+\begin{frame}{\subsecname}
+    \begin{itemize}
+        \item Eine \TeX\-/Datei (\texttt{.tex}) beginnt in der Regel mit einer sog.
+            \alert{Präambel}:
+            \example{examples/preamble.tex}
+        \item In dieser werden alle Einstellungen des Dokuments festgelegt, wie z.B. Layout, eigene
+            Befehle und zusätzliche Pakete. Dies erzeugt noch keinen sichtbaren Output!
+        \item Notwendig: \code{\\documentclass\{...\}} zu Beginn zum Festlegen der
+            \alert{Dokumentklasse}.
+            \begin{itemize}
+                \item Empfohlen: KOMA\-/Script\-/Klassen (\texttt{scrartcl}, \texttt{scrreprt},
+                    \texttt{scrbook}, \dots) statt der Standardklassen (\texttt{article},
+                    \texttt{report}, \texttt{book}, \dots)
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\subsecname~(2)}
+    \begin{itemize}
+        \item Der eigentliche Inhalt, der ausgegeben werden soll, befindet sich in der Umgebung
+            \texttt{document}:
+            \example{examples/document.tex}
+        \item Text nach \code{\\end\{document\}} wird nicht verarbeitet.
+    \end{itemize}
+\end{frame}
