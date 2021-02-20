@@ -1,12 +1,12 @@
 \subsection{Mathematische Formeln}
 
 \begin{frame}[fragile]{\subsecname}
-    Mathematische Formeln können auf verschiedene Arten und Weisen im so genannten \alert{math mode}
+    Mathematische Formeln können auf verschiedene Arten und Weisen im so genannten \alert{Math Mode}
     gesetzt werden:
     \begin{itemize}
-        \item Innerhalb von Fließtext (\alert{inline math}) mittels \code{$...$}:
+        \item \emph{Inline Math}: Innerhalb von Fließtext mittels \code{$...$}:
             \example*{examples/inline_math.tex}
-        \item Abgesetzt in einer separaten Zeile (\alert{display math}) mittels \code{[...]}:
+        \item \emph{Display Math}: Abgesetzt in einer separaten Zeile mittels \code{\[...\]}:
             \example*{examples/display_math.tex}
     \end{itemize}
 \end{frame}
@@ -17,6 +17,7 @@
             \example*{examples/indices.tex}
             Beachte: Für Indizes mit mehr als einem Zeichen muss der Index in geschweifte Klammern
             gesetzt werden: \code{v_{i-1}}.
+        \smallskip
         \item Exponenten:
             \example*{examples/exponents.tex}
             Beachte: Wie bei Indizes müssen mehrere Zeichen in geschweifte Klammern gesetzt werden:
@@ -26,9 +27,11 @@
 
 \begin{frame}[fragile]{Mehrzeilige Formeln}
     \begin{itemize}
-        \item Für mehrzeilige Rechnungen bieten sich Umgebungen wie \texttt{align} an:
+        \item Für mehrzeilige Formeln bieten sich Umgebungen wie \texttt{align} an:
             \example*{examples/align.tex}
         \item Die Zeilen werden dabei anhand der \code{&} ausgerichtet.
+        \item Nummerierung kann mit \code{\nonumber} pro Zeile ausgeschaltet werden -- oder man
+            nutzt \texttt{align*} statt \texttt{align}.
         \item Andere nützliche Umgebungen sind \texttt{equation}, \texttt{gather}, \texttt{array},
             \texttt{multiline}.
         \item Diese Umgebungen werden vom Paket \texttt{amsmath} bereitgestellt, welches daher bei
@@ -36,8 +39,6 @@
             \begin{center}
                 \code{\usepackage{amsmath}}
             \end{center}
-        \item Nummerierung kann mit \code{\nonumber} pro Zeile ausgeschaltet werden -- oder man
-            nutzt \texttt{align*} statt \texttt{align}.
     \end{itemize}
 \end{frame}
 
