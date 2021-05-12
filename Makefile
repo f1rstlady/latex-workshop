@@ -1,6 +1,6 @@
 SUBDIRS=exercise presentation
 
-.PHONY : subdirs $(SUBDIRS)
+.PHONY : all clean cleanall $(SUBDIRS)
 
 all : $(SUBDIRS)
 
